@@ -72,7 +72,7 @@ CREATE TABLE kits (
     FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
 
-CREATE TABLE logística (
+CREATE TABLE logistica (
     id INT PRIMARY KEY AUTO_INCREMENT,
     cliente_id INT NOT NULL,
     produto_id INT NOT NULL,
