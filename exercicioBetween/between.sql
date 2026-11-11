@@ -48,4 +48,4 @@ INNER JOIN venda
 ON venda.id_cliente = cliente.id_cliente
 WHERE venda.status_venda IN ("Cancelada", "Concluída") 
 AND venda.data_venda BETWEEN "2025-12-01" AND "2025-12-31"
-ORDER BY venda.status_venda ASC;
+ORDER BY venda.status_venda DESC;
