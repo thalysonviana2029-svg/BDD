@@ -40,7 +40,7 @@ ORDER BY venda.preco_unitario_venda DESC;
 -- Exercício 07
 
 SELECT cliente.nome_cliente, cliente.email, produto.nome_produto, produto.marca,
-produto.categoria, venda.forma_pagamento, venda.data_venda, venda.data_venda, venda.status_venda
+produto.categoria, venda.forma_pagamento, venda.data_venda, venda.status_venda
 FROM cliente
 INNER JOIN produto
 ON produto.id_produto = cliente.id_cliente
