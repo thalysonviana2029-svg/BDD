@@ -1,7 +1,7 @@
 DATABASE loja;
 
-CREATE TABLE clientes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE cliente (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
     nome_cliente VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -9,16 +9,16 @@ CREATE TABLE clientes (
     endereco VARCHAR(255)
 );
 
-CREATE TABLE produtos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE produto (
+    id_produto INT PRIMARY KEY AUTO_INCREMENT,
     nome_produto VARCHAR(100) NOT NULL,
     tipo VARCHAR(50) NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
     estoque INT NOT NULL
 );
 
-CREATE TABLE vendas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE venda (
+    id_venda INT PRIMARY KEY AUTO_INCREMENT,
     cliente_id INT NOT NULL,
     produto_id INT NOT NULL,
     quantidade INT NOT NULL,
@@ -29,59 +29,31 @@ CREATE TABLE vendas (
 );
 
 CREATE TABLE moda (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT NOT NULL,
-    produto_id INT NOT NULL,
-    quantidade INT NOT NULL,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_entrega DATETIME,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+    id_moda INT PRIMARY KEY AUTO_INCREMENT,
+
 );
 
-CREATE TABLE instrumentos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT NOT NULL,
-    produto_id INT NOT NULL,
-    quantidade INT NOT NULL,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_entrega DATETIME,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+CREATE TABLE instrumento (
+    id_instrumento INT PRIMARY KEY AUTO_INCREMENT,
+    personalizacao VARCHAR(40) NOT NULL,
+
 );
 
-CREATE TABLE roupas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT NOT NULL,
-    produto_id INT NOT NULL,
-    quantidade INT NOT NULL,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_entrega DATETIME,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+CREATE TABLE roupa (
+    id_roupa INT PRIMARY KEY AUTO_INCREMENT,
+    nome_roupa VARCHAR(30) NOT NULL,
+
 );
 
-CREATE TABLE kits (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT NOT NULL,
-    produto_id INT NOT NULL,
-    quantidade INT NOT NULL,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_entrega DATETIME,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+CREATE TABLE kit (
+    id_kit INT PRIMARY KEY AUTO_INCREMENT,
+
 );
 
 CREATE TABLE logistica (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cliente_id INT NOT NULL,
-    produto_id INT NOT NULL,
-    quantidade INT NOT NULL,
-    data_venda DATETIME DEFAULT CURRENT_TIMESTAMP,
-    data_entrega DATETIME,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(id)
-);+
+    id_logistica INT PRIMARY KEY AUTO_INCREMENT,
+
+);
 USE loja;
 
 INSERT INTO clientes (id, nome_cliente, cpf, email, telefone, endereco) 
@@ -101,6 +73,52 @@ VALUES (2, "Bateria", "Percussão", 3000.00, 5);
 
 INSERT INTO produtos (id, nome_produto, tipo, preco, estoque)
 VALUES (3, "Teclado", "Teclado", 2000.00, 8);
+
+INSERT INTO moda (id_moda)
+VALUES (1, );
+
+INSERT INTO moda (id_moda)
+VALUES (2, );
+
+INSERT INTO moda (id_moda)
+VALUES (3, );
+
+INSERT INTO instrumento (id_instrumento, personalizacao)
+VALUES (1, "Guitarra com formato de estrela");
+
+INSERT INTO instrumento (id_instrumento, personalizacao)
+VALUES (2, "Bateria com gengar de estampa e com paletas com detalhes roxos");
+
+INSERT INTO instrumento (id_instrumento, personalizacao)
+VALUES (3, "Baixo com detalhes amarelos com preto e asas de anjo");
+
+INSERT INTO roupa (id_roupa, nome_roupa)
+VALUES (1, "moletom RockLifeStyle");
+
+INSERT INTO roupa (id_roupa, nome_roupa)
+VALUES (2, "camisa RockLifeStyle");
+
+INSERT INTO roupa (id_roupa, nome_roupa)
+VALUES (3, "calca RockLifeStyle");
+
+INSERT INTO kit (id_kit)
+VALUES (1, );
+
+INSERT INTO kit (id_kit)
+VALUES (2, );
+
+INSERT INTO kit (id_kit)
+VALUES (3, );
+
+INSERT INTO logistica (id_logistica)
+VALUES (1, );
+
+INSERT INTO logistica (id_logistica)
+VALUES (2, );
+
+INSERT INTO logistica (id_logistica)
+VALUES (3, );
+
 
 
 
