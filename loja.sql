@@ -30,7 +30,8 @@ CREATE TABLE venda (
 
 CREATE TABLE moda (
     id_moda INT PRIMARY KEY AUTO_INCREMENT,
-
+    moda_masculina VARCHAR(30) NOT NULL,
+    moda_feminina VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE instrumento (
@@ -42,17 +43,18 @@ CREATE TABLE instrumento (
 CREATE TABLE roupa (
     id_roupa INT PRIMARY KEY AUTO_INCREMENT,
     nome_roupa VARCHAR(30) NOT NULL,
-
+    tamanho_roupa INT
 );
 
 CREATE TABLE kit (
     id_kit INT PRIMARY KEY AUTO_INCREMENT,
-
+    
 );
 
 CREATE TABLE logistica (
     id_logistica INT PRIMARY KEY AUTO_INCREMENT,
-
+    entrega_Pres INT,
+    entrega_Deli INT
 );
 USE loja;
 
@@ -74,14 +76,14 @@ VALUES (2, "Bateria", "Percussão", 3000.00, 5);
 INSERT INTO produtos (id, nome_produto, tipo, preco, estoque)
 VALUES (3, "Teclado", "Teclado", 2000.00, 8);
 
-INSERT INTO moda (id_moda)
-VALUES (1, );
+INSERT INTO moda (id_moda,moda_masculina, moda_feminina)
+VALUES (1, "camisa RockLifeStyle M", "camisa RockLifeStyle F");
 
-INSERT INTO moda (id_moda)
-VALUES (2, );
+INSERT INTO moda (id_moda, moda_masculina, moda_feminina)
+VALUES (2, "calça RockLifeStyle M", "calça RockLifeStyle F");
 
-INSERT INTO moda (id_moda)
-VALUES (3, );
+INSERT INTO moda (id_moda, moda_masculina, moda_feminina)
+VALUES (3, "acessórios RockLifeStyle M", "acessórios RockLifeStyle F");
 
 INSERT INTO instrumento (id_instrumento, personalizacao)
 VALUES (1, "Guitarra com formato de estrela");
@@ -111,13 +113,14 @@ INSERT INTO kit (id_kit)
 VALUES (3, );
 
 INSERT INTO logistica (id_logistica)
-VALUES (1, );
+VALUES (1, "1", "1");
 
 INSERT INTO logistica (id_logistica)
-VALUES (2, );
+VALUES (1, "1", "1");
 
 INSERT INTO logistica (id_logistica)
-VALUES (3, );
+VALUES (1, "1", "1");
+
 
 
 
